@@ -13,9 +13,17 @@ En el **Formato de Llamada de Variantes (VCF)**, hay 3 secciones principales en 
 ##Ejemplo:
 
 
-![Encabezado de VCFs](https://github.com/lafabi/Figuras/Fig1.vcf-head.png)
+![Encabezado de VCFs](https://github.com/lafabi/Figuras/blob/main/Fig1.vcf-head.png)
 
 **Figura 1.** Encabezado de archivo VCF
+
+Lo que estamos observando es el encabezado de un archivo en formato Variant Call Format (VCF). El encabezado proporciona metadatos importantes sobre el archivo VCF y el proceso de análisis que se realizó para generar el archivo. Aquí hay una breve descripción de lo que se está observando:
+
+    Se especifica el formato del archivo VCF (VCFv4.2) y se definen filtros como "PASS" que indican que las variantes han pasado los criterios de calidad establecidos.
+    Se proporciona información sobre la versión de la herramienta de análisis (bcftools) utilizada para generar el archivo y los comandos específicos utilizados en el análisis.
+    Se incluye la referencia genómica utilizada para el análisis y se describen los contigs presentes en el archivo, incluyendo sus identificadores y longitudes.
+
+
 
 Línea de cabecera
 
@@ -94,4 +102,4 @@ Cada uno de estos campos se describe en la sección Meta de la siguiente manera:
 
     HQ es calidad de haplotipo y tiene 2 números enteros separados por una coma.
 
-Ícono de validado por la comunidad
+

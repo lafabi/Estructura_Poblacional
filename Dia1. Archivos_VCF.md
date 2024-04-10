@@ -12,13 +12,7 @@ En el **Formato de Llamada de Variantes (VCF)**, hay 3 secciones principales en 
 
 ##Ejemplo:
 
-##fileformat=VCFv4.2
-##FILTER=<ID=PASS,Description="All filters passed">
-##bcftoolsVersion=1.10.2-90-gf27f849+htslib-1.10.2-58-g2e36fa6
-##bcftoolsCommand=mpileup -Ou -f /data6/testacc/fabiola/GCA_010078495.1_BGI_Enov.V1_genomic.fna -b /data6/testacc/fabiola/Fabi.bamlist -d 1000 -Q 20 -a DP,SP -r VULB01000001.1 –-skip-indels
-##reference=file:///data6/testacc/fabiola/GCA_010078495.1_BGI_Enov.V1_genomic.fna
-##contig=<ID=VULB01000001.1,length=1067>
-##contig=<ID=VULB01000002.1,length=2639>
-##contig=<ID=VULB01000003.1,length=4521>
-##contig=<ID=VULB01000004.1,length=3054>
-##contig=<ID=VULB01000005.1,length=3064>
+
+![Jerarquía de directorios](https://github.com/lafabi/Figuras/Fig1.vcf-head.png)
+
+**Figura 1.** Encabezado de archivo VCF

@@ -1,4 +1,4 @@
-# Qué es un archivio VCF?
+# Qué es un archivo VCF?
 
 Es un archivo de texto de llamado de variantes que tiene una extensión .vcf (archivo VCF) y que es  es el resultado de un proceso de bioinformático donde se congrega información de los sitios genéticos variantes y/o invariantes una o más muestras. Por lo general, una muestra de ADN es secuenciada a través de un sistema de secuenciación, produciendo archivos de secuencia cruda. En el proceso de resecuenciación, los datos de secuencia cruda experimentan una serie de ediciones, filtros, anotaciones, luego se alinean contra un genoma de referencia, creando archivos BAM/SAM como resultado. A partir de ahí se realiza el llamado de variantes que no es más que la  identificación de cambios en un genoma particular en comparación con el genoma de referencia. Esa salida se almacena en un formato de llamada de variantes, VCF que es un acrónimo de *Variant Calling File*
 
@@ -10,7 +10,7 @@ En el **Formato de Llamada de Variantes (VCF)**, hay 3 secciones principales en 
 
 3. **Líneas de Datos:** El resto del archivo con 1 posición por línea.
 
-##Ejemplo:
+## Ejemplo:
 
 
 ![Encabezado de VCFs](https://github.com/lafabi/Figuras/blob/main/Fig1.vcf-head.png)
@@ -25,7 +25,7 @@ Lo que estamos observando es el encabezado de un archivo en formato Variant Call
 
 
 
-#Línea de cabecera
+# Línea de cabecera
 
 Cada archivo VCF tiene una única línea de encabezado que tiene 8 campos obligatorios separados por pestañas que representan columnas para cada línea de datos:
 
@@ -33,7 +33,7 @@ Cada archivo VCF tiene una única línea de encabezado que tiene 8 campos obliga
 
 Si hay datos de genotipo, se declara una columna FORMATO seguida de nombres de muestra únicos. Todos estos nombres de columnas también deben estar separados por pestañas.
 
-#Líneas de datos
+# Líneas de datos
 
 Cada línea de datos representa una posición en el genoma. Los datos corresponden a las columnas especificadas en el encabezado y deben estar separados por tabulaciones y terminar con una nueva línea.
 

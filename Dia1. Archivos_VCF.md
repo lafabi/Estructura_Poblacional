@@ -13,6 +13,6 @@ En el **Formato de Llamada de Variantes (VCF)**, hay 3 secciones principales en 
 ##Ejemplo:
 
 
-![Jerarquía de directorios](https://github.com/lafabi/Figuras/Fig1.vcf-head.png)
+![Encabezado de VCFs](https://github.com/lafabi/Figuras/Fig1.vcf-head.png)
 
 **Figura 1.** Encabezado de archivo VCF

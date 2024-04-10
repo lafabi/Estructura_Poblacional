@@ -41,12 +41,12 @@ A continuación se muestran las columnas y sus valores esperados. En todos los c
 
     ALT: Bases alternativas separadas por comas (ACGT). Eliminaciones representadas por un punto.
 
-    CUAL: puntuación de calidad en una escala logarítmica. 100 significa 1 entre 10^10 posibilidades de error.
+    QUAL: puntuación de calidad en una escala logarítmica. 100 significa 1 entre 10^10 posibilidades de error.
 
-    FILTRO: indica qué filtros han fallado (separados por punto y coma), PASA o FALTA.
+    FILTER: indica qué filtros han fallado (separados por punto y coma), PASA o FALTA.
 
-    INFORMACIÓN: información a nivel de sitio (no de muestra) en formato de nombre-valor separado por punto y coma.
+    INFO: información a nivel de sitio (no de muestra) en formato de nombre-valor separado por punto y coma.
 
     FORMATO: declaraciones de nombres de campos a nivel de muestra separadas por punto y coma.
 
-    <DATOS DE MUESTRA>: datos de campo a nivel de muestra separados por punto y coma correspondientes a declaraciones de campo FORMATO.
+    <SAMPLE DATA>: datos de campo a nivel de muestra separados por punto y coma correspondientes a declaraciones de campo FORMATO.

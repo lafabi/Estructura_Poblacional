@@ -68,8 +68,9 @@ A continuación se muestran las columnas y sus valores esperados. En todos los c
 
 Ejercicio: Qué observas al tipear el final o la colita del archivo vcf con este comando: 
 
-``
+```
 tail archivo.vcf
+
 ```
 
 

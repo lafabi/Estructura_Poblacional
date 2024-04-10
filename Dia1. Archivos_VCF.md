@@ -50,3 +50,46 @@ A continuación se muestran las columnas y sus valores esperados. En todos los c
     FORMATO: declaraciones de nombres de campos a nivel de muestra separadas por punto y coma.
 
     <SAMPLE DATA>: datos de campo a nivel de muestra separados por punto y coma correspondientes a declaraciones de campo FORMATO.
+
+
+    Position and Ref/Alt Information
+
+Below are some notes to help understand the first 5 columns about the above file.
+
+    All of the variants occur on Chromosome 20 on the NCBI36 (hg18).
+
+    There are 5 positions identified (14370, 18330, 1110696, 1230237, 1234567).
+
+    Three of the variants have IDs including 2 dbSNP records (rs6054257, rs6040355).
+
+    The first two positions (14370, 17330) are simple single-base pair substitutions.
+
+    The third position has 2 alternate alleles specified (G and T) that replace the ref (A).
+
+    The fourth position represents a deletion of a T since the alt allele is missing (“.”).
+
+    The fifth row has 2 alt alleles, the first is a deletion of TC and second is insertion of a T.
+
+QUAL and FILTER columns
+
+The QUAL column indicates the quality level of the data at that site. The FILTER column designates what filters can be applied. The 2nd row (position 17330), has triggered the q10 filter, which is described in the meta section as “Quality below 10”.
+
+Each bioinformatics pipeline treats these columns differently, so you will need to consult your pipeline’s subject matter experts on how to best interpret this information.
+
+INFO column
+
+The info column includes position-level information for that data row and can be thought as aggregate data that includes all of the sample-level information specified.
+
+FORMAT column
+
+The format column specifies the sample-level fields to expect under each sample. Each row has the same format fields (GT, GQ, DP, and HQ) except for the last row which does not have HQ. 
+
+Each of these fields is described in the Meta section as the following:
+
+    GT (Genotype) indicates which alleles separated by / (unphased) or | (phased).
+
+    GQ is Genotype Quality which is a single integer.
+
+    DP is Read Depth which is a single integer.
+
+    HQ is Haplotype Quality and has 2 integers separated by a comma.

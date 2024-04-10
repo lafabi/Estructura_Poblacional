@@ -52,44 +52,46 @@ A continuación se muestran las columnas y sus valores esperados. En todos los c
     <SAMPLE DATA>: datos de campo a nivel de muestra separados por punto y coma correspondientes a declaraciones de campo FORMATO.
 
 
-    Position and Ref/Alt Information
+Información de posición y referencia/alt.
 
-Below are some notes to help understand the first 5 columns about the above file.
+A continuación hay algunas notas que le ayudarán a comprender las primeras 5 columnas sobre el archivo anterior.
 
-    All of the variants occur on Chromosome 20 on the NCBI36 (hg18).
+    Todas las variantes ocurren en el cromosoma 20 del NCBI36 (hg18).
 
-    There are 5 positions identified (14370, 18330, 1110696, 1230237, 1234567).
+    Hay 5 posiciones identificadas (14370, 18330, 1110696, 1230237, 1234567).
 
-    Three of the variants have IDs including 2 dbSNP records (rs6054257, rs6040355).
+    Tres de las variantes tienen ID que incluyen 2 registros dbSNP (rs6054257, rs6040355).
 
-    The first two positions (14370, 17330) are simple single-base pair substitutions.
+    Las dos primeras posiciones (14370, 17330) son sustituciones simples de un solo par de bases.
 
-    The third position has 2 alternate alleles specified (G and T) that replace the ref (A).
+    La tercera posición tiene 2 alelos alternativos especificados (G y T) que reemplazan a la referencia (A).
 
-    The fourth position represents a deletion of a T since the alt allele is missing (“.”).
+    La cuarta posición representa una eliminación de una T ya que falta el alelo alt (“.”).
 
-    The fifth row has 2 alt alleles, the first is a deletion of TC and second is insertion of a T.
+    La quinta fila tiene 2 alelos alt, la primera es una eliminación de TC y la segunda es la inserción de una T.
 
-QUAL and FILTER columns
+Columnas CALIDAD y FILTRO
 
-The QUAL column indicates the quality level of the data at that site. The FILTER column designates what filters can be applied. The 2nd row (position 17330), has triggered the q10 filter, which is described in the meta section as “Quality below 10”.
+La columna CUAL indica el nivel de calidad de los datos en ese sitio. La columna FILTRO designa qué filtros se pueden aplicar. La segunda fila (posición 17330) ha activado el filtro q10, que se describe en la metasección como "Calidad inferior a 10".
 
-Each bioinformatics pipeline treats these columns differently, so you will need to consult your pipeline’s subject matter experts on how to best interpret this information.
+Cada canal bioinformático trata estas columnas de manera diferente, por lo que deberá consultar a los expertos en la materia de su canal sobre cómo interpretar mejor esta información.
 
-INFO column
+columna INFORMACIÓN
 
-The info column includes position-level information for that data row and can be thought as aggregate data that includes all of the sample-level information specified.
+La columna de información incluye información a nivel de posición para esa fila de datos y puede considerarse como datos agregados que incluyen toda la información a nivel de muestra especificada.
 
-FORMAT column
+columna FORMATO
 
-The format column specifies the sample-level fields to expect under each sample. Each row has the same format fields (GT, GQ, DP, and HQ) except for the last row which does not have HQ. 
+La columna de formato especifica los campos a nivel de muestra que se esperan en cada muestra. Cada fila tiene los mismos campos de formato (GT, GQ, DP y HQ) excepto la última fila que no tiene HQ.
 
-Each of these fields is described in the Meta section as the following:
+Cada uno de estos campos se describe en la sección Meta de la siguiente manera:
 
-    GT (Genotype) indicates which alleles separated by / (unphased) or | (phased).
+    GT (Genotipo) indica qué alelos separados por / (sin fase) o | (por fases).
 
-    GQ is Genotype Quality which is a single integer.
+    GQ es Calidad del Genotipo, que es un número entero único.
 
-    DP is Read Depth which is a single integer.
+    DP es profundidad de lectura, que es un número entero único.
 
-    HQ is Haplotype Quality and has 2 integers separated by a comma.
+    HQ es calidad de haplotipo y tiene 2 números enteros separados por una coma.
+
+Ícono de validado por la comunidad

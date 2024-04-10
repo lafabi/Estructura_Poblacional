@@ -10,6 +10,12 @@ En el **Formato de Llamada de Variantes (VCF)**, hay 3 secciones principales en 
 
 3. **Líneas de Datos:** El resto del archivo con 1 posición por línea.
 
+Ejercicio: muévete al directorio donde guardaste el archivo vcf proporcionado y instruye la siguiente línea de comando
+
+
+```
+bcftools view -h archivo.vcf
+```
 ## Ejemplo:
 
 
@@ -59,6 +65,12 @@ A continuación se muestran las columnas y sus valores esperados. En todos los c
 
     <SAMPLE DATA>: datos de campo a nivel de muestra separados por punto y coma correspondientes a declaraciones de campo FORMATO.
 
+
+Ejercicio: Qué observas al tipear el final o la colita del archivo vcf con este comando: 
+
+``
+tail archivo.vcf
+```
 
 
 

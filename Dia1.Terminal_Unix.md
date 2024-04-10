@@ -60,14 +60,6 @@ pwd
 En la terminal, las rutas relativas y absolutas se utilizan para especificar la ubicación de un archivo o directorio en el sistema de archivos. Una ruta absoluta, como su nombre lo indica, es una ruta completa que comienza desde la raíz o home del sistema de archivos y especifica la ubicación exacta de un archivo o directorio. En Linux toda ruta absoluta comienza con un slash (/). Por el contrario, una ruta relativa especifica la ubicación de un archivo o directorio en relación con la ubicación actual. No comienza con un slash (/) y depende la ruta donde se encuentre el usuario.
 
 
-Ahora que tenemos creado un directorio llamado *Genobiostoic* construyamos esta jerarquía de archivos:
-
-![Jerarquía de directorios](https://github.com/lafabi/Genobiostoic/blob/main/Esquema_directorios.png)
-
-**Figura 1.** Jerarquía de directorios
-
->Trabajemos en base a esta figura el concepto de ruta absoluta y relativa. La ruta *relativa* para acceder, por ejemplo, al directorio "Practica1" desde el directorio "Genobiostoic", será /Terminal/Practica1, mientras que la ruta *absoluta* para acceder a este directorio será /home/usuario/Documentos/Genobiostoic/Terminal/Practica1. 
-
 ## Descargar archivos
 
 Ahora que sabemos cómo crear directorios, movernos entre ellos y listar su contenido, aprendamos a descargar archivos desde repositorios remotos a través de líneas de comando. Para ello usaremos ```wget```. En esta oportunidad descargaremos el libro de literatura inglesa clásica Dr. Jeckyll y Mr.Hyde en el directorio Genobiostoic a través de este comando:

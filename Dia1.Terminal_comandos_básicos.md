@@ -1,4 +1,4 @@
-# Familiarización con la terminal Bash: Día 1
+# Terminal bash: comandos básicos
 
 **¿Qué es la terminal Bash o Shell?**
 

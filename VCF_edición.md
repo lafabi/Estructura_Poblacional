@@ -1,8 +1,9 @@
+# Edición y aplicación de filtros en archivos VCF
  Cambiar el nombre de las muestras
 ```
 bcftools reheader --samples ID.poo.txt -o archivo2.vcf archivo1.vcf
 ```
-## Anotar información relevante en el archivo (cromosoma y posición)
+### Anotar información relevante en el archivo (cromosoma y posición)
 ```
 bcftools annotate --set-id +'%CHROM\_%POS\' -Ov -o archivo2.vcf archivo1.vcf
 ```

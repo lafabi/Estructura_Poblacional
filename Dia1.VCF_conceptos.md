@@ -37,7 +37,7 @@ Cada archivo VCF tiene una única línea de encabezado que tiene 8 campos obliga
 
 #CHROM POS ID REF ALT CALIDAD INFORMACIÓN FILTRO
 
-#CHROM - Identificador de cromosomas
+    #CHROM - Identificador de cromosomas
 
     POS - Posición de referencia. Ordenados numéricamente en orden ascendente por cromosoma.
 

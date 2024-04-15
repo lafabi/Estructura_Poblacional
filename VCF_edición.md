@@ -79,11 +79,11 @@ bcftools filter --SnpGap 5 --IndelGap 5 -Ov -o archivo2.vcf archivo1.vcf
 
 # Edición
 
-# Cambiar el nombre de las muestras
+## Cambiar el nombre de las muestras
 ```
 bcftools reheader --samples ID.pop.txt -o archivo1.vcf archivo2.vcf
 ```
-# Anotar ID con cromosoma y posición
+## Anotar ID con cromosoma y posición
 ```
 bcftools annotate --set-id +'%CHROM\_%POS\' -Ov -o archivo2.vcf archivo2.vcf
 ```

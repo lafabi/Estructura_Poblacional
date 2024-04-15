@@ -2,7 +2,7 @@
 
  Cambiar el nombre de las muestras
 ```
-bcftools reheader --samples ID.poo.txt -o archivo2.vcf archivo1.vcf
+bcftools reheader --samples ID.pop.txt -o archivo2.vcf archivo1.vcf
 ```
  Anotar información relevante en el archivo (cromosoma y posición)
 ```

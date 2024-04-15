@@ -37,15 +37,7 @@ Cada archivo VCF tiene una única línea de encabezado que tiene 8 campos obliga
 
 #CHROM POS ID REF ALT CALIDAD INFORMACIÓN FILTRO
 
-Si hay datos de genotipo, se declara una columna FORMATO seguida de nombres de muestra únicos. Todos estos nombres de columnas también deben estar separados por pestañas.
-
-# Líneas de datos
-
-Cada línea de datos representa una posición en el genoma. Los datos corresponden a las columnas especificadas en el encabezado y deben estar separados por tabulaciones y terminar con una nueva línea.
-
-A continuación se muestran las columnas y sus valores esperados. En todos los casos, los valores FALTANTES deben representarse con un punto ('.').
-
-    #CHROM - Identificador de cromosomas. Los ejemplos incluyen 7, chr7, X o chrX.
+#CHROM - Identificador de cromosomas
 
     POS - Posición de referencia. Ordenados numéricamente en orden ascendente por cromosoma.
 
@@ -65,6 +57,16 @@ A continuación se muestran las columnas y sus valores esperados. En todos los c
 
     <SAMPLE DATA>: datos de campo a nivel de muestra separados por punto y coma correspondientes a declaraciones de campo FORMATO.
 
+
+Si hay datos de genotipo, se declara una columna FORMATO seguida de nombres de muestra únicos. Todos estos nombres de columnas también deben estar separados por pestañas.
+
+# Líneas de datos
+
+Cada línea de datos representa una posición en el genoma. Los datos corresponden a las columnas especificadas en el encabezado y deben estar separados por tabulaciones y terminar con una nueva línea.
+
+
+
+    
 
 Ejercicio: Qué observas al tipear el final o la colita del archivo vcf con este comando: 
 

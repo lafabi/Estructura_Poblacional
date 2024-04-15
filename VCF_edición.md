@@ -1,4 +1,5 @@
 # Edición y aplicación de filtros en archivos VCF
+
  Cambiar el nombre de las muestras
 ```
 bcftools reheader --samples ID.poo.txt -o archivo2.vcf archivo1.vcf
@@ -8,7 +9,7 @@ bcftools reheader --samples ID.poo.txt -o archivo2.vcf archivo1.vcf
 bcftools annotate --set-id +'%CHROM\_%POS\' -Ov -o archivo2.vcf archivo1.vcf
 ```
 
-# Filtros Básicos
+## Filtros Básicos
 
 valor mínimo de Q de 30 (en escala phred)
 ```
@@ -77,7 +78,7 @@ Enmascarar los indels y snps alrededor de indels
 bcftools filter --SnpGap 5 --IndelGap 5 -Ov -o archivo2.vcf archivo1.vcf
 ```
 
-# Edición
+## Edición
 
 Cambiar el nombre de las muestras
 ```

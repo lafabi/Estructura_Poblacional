@@ -1,5 +1,4 @@
-
-## Cambiar el nombre de las muestras
+ Cambiar el nombre de las muestras
 ```
 bcftools reheader --samples ID.poo.txt -o archivo2.vcf archivo1.vcf
 ```
@@ -34,7 +33,7 @@ Esto te permitirá instalar los programas requeridos utilizando Conda.
 ```
 grep  -c -v "^#" input.vcf
 ```
-## Conocer el número sólo de los sitios variantes
+## Conocer sólo el número  de los sitios variantes
 ```
 egrep -v "^#" input.vcf | wc -l
 ```
@@ -52,7 +51,7 @@ vcftools --vcf archivo1.vcf --minDP 3 --recode --recode-INFO-all --out archivo2.
 bcftools filter --SnpGap 5 --IndelGap 5 -Ov -o archivo2.vcf archivo1.vcf
 ```
 
-## Eliminar todo el missing data
+## Eliminar todo los missing data
 ```
  bcftools view -e 'GT[*] = "mis"' archivo1.vcf > archivo2.vcf
 ```

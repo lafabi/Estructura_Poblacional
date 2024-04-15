@@ -16,7 +16,7 @@ Esto te permitirá instalar los programas requeridos utilizando Conda.
 ```
 grep  -c -v "^#" input.vcf
 ```
-## Sólo de los sitios variantes
+## Conocer el número sólo de los sitios variantes
 ```
 egrep -v "^#" input.vcf | wc -l
 ```
@@ -24,7 +24,7 @@ egrep -v "^#" input.vcf | wc -l
 ```
 bcftools query -l archivo.vcf
 ```
-## cambio el nombre de las muestras
+## Cambiar el nombre de las muestras
 ```
 bcftools reheader --samples ID.poo.txt -o archivo2.vcf archivo1.vcf
 ```
@@ -32,7 +32,8 @@ bcftools reheader --samples ID.poo.txt -o archivo2.vcf archivo1.vcf
 ```
 bcftools annotate --set-id +'%CHROM\_%POS\' -Ov -o archivo2.vcf archivo1.vcf
 ```
-##Filtros Básicos
+
+# Filtros Básicos
 
 ## valor mínimo de Q de 30 (en escala phred)
 ```
@@ -56,9 +57,20 @@ bcftools filter --SnpGap 5 --IndelGap 5 -Ov -o archivo2.vcf archivo1.vcf
  bcftools view -e 'GT[*] = "mis"' archivo1.vcf > archivo2.vcf
 ```
 
-## Filtros específicos (MAF)
+#  Filtros específicos 
+
+## minor allele frequency (MAF)
 ```
 vcftools --vcf archivo1.vcf --maf 0.01 --recode --recode-INFO-all --out archivo2.vcf
+
+
+Existen otros filtros como los que se mencionan a continuación:
+> + Minor Allele Count (MAC)
+> + Heterocigociddad
+> + Hardy & Weinberg
+> + Desequilibrio de Ligamiento (Lo veremos en el segundo día)
+
+
 ```
 ## Enmascarar los indels y snps alrededor de indels
 ```

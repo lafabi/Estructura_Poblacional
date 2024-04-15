@@ -1,4 +1,22 @@
-## Ahora, interactuemos con los Archivos VCF
+
+## Cambiar el nombre de las muestras
+```
+bcftools reheader --samples ID.poo.txt -o archivo2.vcf archivo1.vcf
+```
+## Anotar información relevante en el archivo (cromosoma y posición)
+```
+bcftools annotate --set-id +'%CHROM\_%POS\' -Ov -o archivo2.vcf archivo1.vcf
+```
+
+# Filtros Básicos
+
+## valor mínimo de Q de 30 (en escala phred)
+```
+vcftools --gzvcf archivo1.vcf.gz --minQ 30  --minDP 3 --min-meanDP 1.7 --max-meanDP 10 --max-missing 0.95 --recode --recode-INFO-all --out archivo2.vcf
+```
+## Máximo de missing information del 0.95 o  'Proporción de individuos en el estudio para los cuales la información correspondiente de SNP NO está ausente.
+```
+vcftools --vcf archivo1.vcf --max-missing 0.95 --recode --r## Ahora, interactuemos con los Archivos VCF
 
 Antes de comenzar, asegúrate de tener instalado Conda. Luego, sigue estos pasos para instalar los programas necesarios:
 
@@ -23,25 +41,7 @@ egrep -v "^#" input.vcf | wc -l
 ## Conocer el nombre de las muestras presentes en el vcf
 ```
 bcftools query -l archivo.vcf
-```
-## Cambiar el nombre de las muestras
-```
-bcftools reheader --samples ID.poo.txt -o archivo2.vcf archivo1.vcf
-```
-## Anotar información relevante en el archivo (cromosoma y posición)
-```
-bcftools annotate --set-id +'%CHROM\_%POS\' -Ov -o archivo2.vcf archivo1.vcf
-```
-
-# Filtros Básicos
-
-## valor mínimo de Q de 30 (en escala phred)
-```
-vcftools --gzvcf archivo1.vcf.gz --minQ 30  --minDP 3 --min-meanDP 1.7 --max-meanDP 10 --max-missing 0.95 --recode --recode-INFO-all --out archivo2.vcf
-```
-## Máximo de missing information del 0.95 o  'Proporción de individuos en el estudio para los cuales la información correspondiente de SNP NO está ausente.
-```
-vcftools --vcf archivo1.vcf --max-missing 0.95 --recode --recode-INFO-all --out archivo2.vcf
+```ecode-INFO-all --out archivo2.vcf
 ```
 ## --minDP indica la cantidad mínima de reads para considerar un genotipo
 ```

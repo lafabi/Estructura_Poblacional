@@ -76,7 +76,7 @@ ggplot(Val[1:5,], aes(x=Val[1:5,]$PC, y=Val[1:5,]$percent), xlab = "PC") +
 ## Cargamos los datos de eigenvector
 Vec<-read.table("/home/fabiola/Documentos/Spheniscus/External-memory/Spheniscus/vcf-raw/Workshop/PCA3.eigenvec")  
 Vec <- Vec[,(1:5), drop=FALSE] 
-colnames(Vec)<-c("ID","Species","PCA1","PCA2","PCA3") 
+colnames(Vec)<-c("ID","Species","PCA1","PCA2","PCA3","red") 
 print(Vec$Species)  
 print(Vec$ID) 
 

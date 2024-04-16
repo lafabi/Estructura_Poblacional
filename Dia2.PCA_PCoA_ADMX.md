@@ -13,7 +13,7 @@ conda install -c bioconda admixture
 plink --vcf archivo1.vcf --recode --out archivo2.vcf --allow-extra-chr
 ```
 > + En este script la función --allow-extra-chr permite el uso de cromosomas adicionales en comparación a el número de cromosomas de humanos
-> + 
+
 
 ## Pruning o purga primer paso, se identifican los SNPs que muestran desequilibrio de ligamiento. Cualquier SNP que presente una correlación con r igual o mayor a 0.1 será eliminado.
 ```
@@ -131,15 +131,18 @@ plink --file archivo2-ADMX --extract plink.prune.in --recode --out archivo3-ADMX
 ```
 
 ## Con este loop probaremos  distintos valores de K (cantidad de poblaciones ancestrales), con K={1 2 3 4 5 6 7 8 9 10}.
-#El flag '--cv' permite evaluar varios K con una 'validación cruzada'. Calculan el error estandar de la validacion cruzada para cada K, y el de menor
-#valor indica que tiene mayor sensibilidad.
+> +  El flag '--cv' permite evaluar varios K con una 'validación cruzada'. Calculan el error estandar de la validacion cruzada para cada K, y el de menor valor indica que tiene mayor se considera el más probable.
+
+```
 for K in 1 2 3 4 5 6 7 8 9 10
 do
 admixture --cv archivo3-ADMX.ped $K -j8 | tee log${K}.out
 done
-
+``` 
 ## Para observar los distintos K ocupamos el comando *grep*
+```
 grep -h CV *.out > ID_log_admix.txt
+```
 
 Para graficar los resultados ocuparemos una herramienta en línea llamada pophelper:
 

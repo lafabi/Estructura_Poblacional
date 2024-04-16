@@ -59,8 +59,8 @@ library(stringr)
 
 # Cargamos los datos de eigenvalues
 Val <- read.table("/home/fabiola/Documentos/Spheniscus/External-memory/Spheniscus/vcf-raw/Workshop/PCA3.eigenval") 
-Val$PC <- c(1:20)  # concatenar valores del 1 a 17 como valores de la variable PC
-colnames(Val) <- c("percent","PC") # nombrar columnas
+Val$PC <- c(1:20)  
+colnames(Val) <- c("percent","PC")
 print(Val)
 
 # Graficamos  los eigenvalues en Barplot o Histogramas 

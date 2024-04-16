@@ -1,4 +1,4 @@
-## Análisis de Estructura PCA y PCoA
+# Análisis de Estructura PCA y PCoA
 Los PCAs se obtienen como forma de análisis exploratorio de los datos, su principal función es la de reducir la dimensionalidad de un conjunto de datos. En genómica los PCAs permiten observar la  direccionalidad y patrones de agrupamiento, ordenándolos en función de cuánta varianza explican.
 
 Instalemos lo programas que utilizaremos en esta sección
@@ -8,20 +8,20 @@ conda install -c bioconda plink
 conda install -c bioconda admixture
 ```
 
-# El primer paso es convertir el archivo VCF a formato Plink. 
+## El primer paso es convertir el archivo VCF a formato Plink. 
 ```
 plink --vcf archivo1.vcf --recode --out archivo2.vcf --allow-extra-chr
 ```
 > + En este script la función --allow-extra-chr permite el uso de cromosomas adicionales en comparación a el número de cromosomas de humanos
 > + 
 
-# Pruning o purga primer paso, se identifican los SNPs que muestran desequilibrio de ligamiento. Cualquier SNP que presente una correlación con r igual o mayor a 0.1 será eliminado.
+## Pruning o purga primer paso, se identifican los SNPs que muestran desequilibrio de ligamiento. Cualquier SNP que presente una correlación con r igual o mayor a 0.1 será eliminado.
 ```
 plink --file archivo2 --indep-pairwise 50 5 0.1 --allow-extra-chr
 ```
 > + En este script la función --indep-pairwise 50 5 0.1 especifica la forma en que se realizará el pruning, se filtran los SNPs que tienen una correlación (r) igual o mayor a 0.1 pq se consideran que están  ligados. Los números 50 y 5 indican la ventana de tamaño y el paso entre SNPs considerados.
 
-# Pruning o purga segundo paso, se excluyen los snps que no presentan desequilibrio de ligamiento.
+## Pruning o purga segundo paso, se excluyen los snps que no presentan desequilibrio de ligamiento.
 
 ```
 plink --file archivo2 --extract plink.prune.in --recode vcf --out archivo3.vcf --allow-extra-chr
@@ -29,13 +29,13 @@ plink --file archivo2 --extract plink.prune.in --recode vcf --out archivo3.vcf -
 > + La función --extract plink.prune.in especifica el archivo que contiene los SNPs pruneados.
 > + Mientras que la función --recode vcf indica que los archivos de salida se recodifican a formato VCF.
 
-# Se realiza el PCA
+## Se realiza el PCA
 ```
 plink --vcf archivo3.vcf --pca --out archivo3-LD-0.1 --allow-extra-chr
 ```
 
 
-Luego de correr el script. obtendremos los archivos eigenvalue y eigenvector.Estos archivos son ampliamente utilizados en análisis multivariados. 
+## Luego de correr el script. obtendremos los archivos eigenvalue y eigenvector.Estos archivos son ampliamente utilizados en análisis multivariados. 
 
     Los eigenvalues son valores que caracterizan la escala o la magnitud de la varianza explicada por cada componente principal en un PCA. Representan la varianza explicada por cada componente principal y se muestran en orden descendente, lo que significa que el primer eigenvalue es el más grande y explica la mayor parte de la varianza en los datos.
 
@@ -43,7 +43,7 @@ Luego de correr el script. obtendremos los archivos eigenvalue y eigenvector.Est
     Rrepresentan las combinaciones lineales de las variables originales que definen las nuevas variables ortogonales (componentes principales) que explican la mayor parte de la varianza en los datos, éstosse utilizan para transformar los datos originales en un nuevo conjunto de datos proyectados en el espacio de las componentes principales.
 
 
-Una vez obtenido los eigenvalues y los eigenvectors procedemos a graficarlos en R
+## Una vez obtenido los eigenvalues y los eigenvectors procedemos a graficarlos en R
 
 ```
 # Limpiamos el ambiente de R
@@ -111,26 +111,26 @@ print(p4)
 
 ```
 
-## Análisis de Estructura hallar número de clústers más probables y el grado de mezcla
+# Análisis de Estructura hallar número de clústers más probables y el grado de mezcla
 
 
-# Convertir a formato plink admisible reconocible para admixture (recode 12)
+## Convertir a formato plink admisible reconocible para admixture (recode 12)
 ```
 plink --vcf archivo1.vcf --recode 12 --out archivo2-ADMX --allow-extra-chr
 ```
 
 
-# Pruning, primer paso. Se estima cuales están bajo desequilibrio de ligamiento. Aquí cualquier SNP que se correlacione con un r de 0.1 o mayor será eliminado
+## Pruning, primer paso. Se estima cuales están bajo desequilibrio de ligamiento. Aquí cualquier SNP que se correlacione con un r de 0.1 o mayor será eliminado
 ```
 plink --file archivo2-ADMX --indep-pairwise 50 5 0.1 --allow-extra-chr
 ```
 
-# Pruning, segundo paso. Se extraen los snps que no presentan desequilibrio de ligamiento.
+## Pruning, segundo paso. Se extraen los snps que no presentan desequilibrio de ligamiento.
 ```
 plink --file archivo2-ADMX --extract plink.prune.in --recode --out archivo3-ADMX --allow-extra-chr 0
 ```
 
-# Com este loop probaremos  distintos valores de K (cantidad de poblaciones ancestrales), con K={1 2 3 4 5 6 7 8 9 10}.
+## Con este loop probaremos  distintos valores de K (cantidad de poblaciones ancestrales), con K={1 2 3 4 5 6 7 8 9 10}.
 #El flag '--cv' permite evaluar varios K con una 'validación cruzada'. Calculan el error estandar de la validacion cruzada para cada K, y el de menor
 #valor indica que tiene mayor sensibilidad.
 for K in 1 2 3 4 5 6 7 8 9 10
@@ -138,7 +138,7 @@ do
 admixture --cv archivo3-ADMX.ped $K -j8 | tee log${K}.out
 done
 
-# Para observar los distintos K ocupamos el comando *grep*
+## Para observar los distintos K ocupamos el comando *grep*
 grep -h CV *.out > ID_log_admix.txt
 
 Para graficar los resultados ocuparemos una herramienta en línea llamada pophelper:

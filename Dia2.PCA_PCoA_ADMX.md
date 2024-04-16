@@ -114,7 +114,7 @@ print(p4)
 # Análisis de Estructura hallar número de clústers más probables y el grado de mezcla
 
 
-## Convertir a formato plink admisible reconocible para admixture (recode 12)
+## Convertir a formato plink (recode 12) admisible y reconocible para admixture 
 ```
 plink --vcf archivo1.vcf --recode 12 --out archivo2-ADMX --allow-extra-chr
 ```

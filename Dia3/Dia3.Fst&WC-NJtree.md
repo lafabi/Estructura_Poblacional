@@ -39,7 +39,7 @@ ggplot(fst_data, aes(x = WEIR_AND_COCKERHAM_FST)) +
        x = "Fst",
        y = "Frecuencia")
 ```
-## Con la finalidad de hacer los cálculos estadístico del promedio y la desviación estandar de los índices, debemos tomar en consideración la normalización de los datos, pues pueden verse afectado por el sesgo del tamaño de cada cromosoma o scaffolds. Para ello debemos conocer el nombre y tamaño de cada cromosoma (esto lo obtenemos a partir de un archivo .fai que es un índice que se obtiene con *samtools faidx* del genoma de referencia).
+### Con la finalidad de hacer los cálculos estadístico del promedio y la desviación estandar de los índices, debemos tomar en consideración la normalización de los datos, pues pueden verse afectado por el sesgo del tamaño de cada cromosoma o scaffolds. Para ello debemos conocer el nombre y tamaño de cada cromosoma (esto lo obtenemos a partir de un archivo .fai que es un índice que se obtiene con *samtools faidx* del genoma de referencia).
 
 ```
 

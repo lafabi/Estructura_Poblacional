@@ -14,9 +14,12 @@ vcftools --vcf archivo.vcf --weir-fst-pop pop1.txt --weir-fst-pop pop2.txt --out
 rm(list=ls())
 graphics.off()
 set.seed(1)
+
 setwd("path/")
+
 library(tidyverse)
 library(ggplot2)
+
 # Read .weir.fst file
 fst_data <- read.table("path/pop1-pop2.weir.fst", header = TRUE)
 
@@ -35,6 +38,19 @@ ggplot(fst_data, aes(x = WEIR_AND_COCKERHAM_FST)) +
   labs(title = "Distribución de Fst",
        x = "Fst",
        y = "Frecuencia")
+
+fst_data <- fread("pop1-pop2.weir.fst")
+tamaño_cromosoma <- fread("tamaño_cromosoma_scaffolds.txt")
+merged_data <- merge(fst_data , tamaño_cromosoma, by="CHR")
+merged_data$normalized_FST <- merged_data$WEIR_AND_COCKERHAM_FST / merged_data$size
+mean_normalized_fst <- mean(merged_data$normalized_FST)
+std_dev_normalized_fst <- sd(merged_data$normalized_FST)
+t_test <- t.test(merged_data$normalized_FST)
+
+print(paste("X_FST_normalizado:", mean_normalized_fst))
+print(paste("DS_FST_Norm:", std_dev_normalized_fst))
+print(paste("p_value:", t_test$p.value))
+
 ```
 
 ## Árboles Neighbor Joining 

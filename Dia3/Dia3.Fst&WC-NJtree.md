@@ -4,8 +4,9 @@ El índice Fst (originalmente de Fisher) de Weir y Cockerham es un parámetro de
 
 El método de Weir y Cockerham descrito en 1984, es particularmente importante en genómica pues proporciona una estimación robusta pues es capaz de corregir la varianza y covarianza de los alelos por el tamaño de la muestra en relación al tamaño de la población total.
 
+Calculamos indices de Fst weir and Cockherman por sitio
+
 ```
-Calculamos indices de Fst weir and Cockherman
 vcftools --vcf archivo.vcf --weir-fst-pop pop1.txt --weir-fst-pop pop2.txt --out pop1-pop2
 ```
 

@@ -92,7 +92,7 @@ p1 <- ggplot (Vec, aes(x= PCA1, y= PCA2, color = Species))+
   theme(panel.border = element_rect(colour="black", fill=NA, size=1))  
 print(p1)
 
-p2 <- p1 + scale_colour_manual(values = c("#CA3F3F","#64AD3F","#E8B547","red"))
+p2 <- p1 + scale_colour_manual(values = c("#CA3F3F","#64AD3F","#E8B547"))
 print(p2)
 
 

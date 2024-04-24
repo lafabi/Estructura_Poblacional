@@ -1,6 +1,6 @@
 # Cómo cambiamos el orden de las muestras en un VCF según su ID sample?
 
-Tomaremos como ejemplo el archivo VCF de *Lama*. Este VCF posee un orden de ID que nos dificulta hacer los análisis posteriores de PCA y Admixture, este tutorial explicará cómo solucionarlo y cómo hacer si tenemos que ordenar otros archivos VCFs propios en el futuro. Lo primero que haremos es conocer el orden de las muestras en el VCF de *Lama* para ello ocupamos el programa bcftools:
+Tomaremos como ejemplo el archivo VCF de *Lama*. Este VCF posee un orden de ID que nos dificulta hacer los análisis posteriores de PCA y Admixture, este tutorial explicará cómo solucionarlo y cómo hacer si tenemos que ordenar otros archivos VCFs propios en el futuro. Lo primero que haremos es conocer el orden de las muestras en el VCF de *Lama*, para ello ocupamos el programa bcftools:
 
 ```
 bcftools query -l guanaco-3chr.vcf
